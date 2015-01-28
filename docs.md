@@ -62,13 +62,13 @@ addOneThenDoubleEach([1, 2, 3]); // [4, 6, 8]
 
 
 ---
-### ``f.Object.filter(String..., =Fn)``
+### ``f.Object.filterProperties(String..., =Fn)``
 #### Description
 Deletes ``properties``s from ``input`` then passes the result to ``callback``
 
 #### Signature
 ```js
-f.Object.filter Fn(
+f.Object.filterProperties Fn(
     properties  String...
     callback    Fn(output Object) -> Generic = f.done
 ) -> Fn(input Object) -> Generic
@@ -76,7 +76,7 @@ f.Object.filter Fn(
 
 #### Example
 ```js
-var removeSensitiveFields = f.Object.filter('password', 'admin');
+var removeSensitiveFields = f.Object.filterProperties('password', 'admin');
 
 Object.keys(removeSensitiveFields({
     id: 1,
