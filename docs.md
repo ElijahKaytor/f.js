@@ -23,7 +23,7 @@ name ::= [a-z] (('.')? [a-zA-Z0-9_])*
 #### ``signature``
 ![]()
 #### ``type``
-![](type.svg)
+![](type.svg?raw=true)
 #### ``name``
 ![]()
 
