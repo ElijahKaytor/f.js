@@ -23,7 +23,7 @@ name ::= [a-z] (('.')? [a-zA-Z0-9_])*
 #### ``signature``
 ![]()
 #### ``type``
-![](type.svg?raw=true)
+![](https://gist.githubusercontent.com/ElijahKaytor/467cea9f03d40c3aa0f8/raw/abaaa3ad783c40b611996634dec6cf31dbbae097/type.svg)
 #### ``name``
 ![]()
 
