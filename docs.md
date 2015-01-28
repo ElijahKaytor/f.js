@@ -6,7 +6,7 @@ Signatures follow the following format
 ## Functions
 
 
-### ``f.done(=Fn)``
+### ``f.done(=Fn) -> Fn -> Generic``
 #### Description
 Calls ``callback`` with the first argument.
 
@@ -23,7 +23,7 @@ f.done Fn(
 
 
 ---
-### ``f.tee(=Fn)``
+### ``f.tee(=Fn) -> Fn -> List``
 #### Description
 Passes the arguments to ``callback`` as a ``List``.
 
@@ -40,7 +40,7 @@ f.tee Fn(
 
 
 ---
-### ``f.List.map(Fn, =Fn)``
+### ``f.List.map(Fn, =Fn) -> Fn -> Generic``
 #### Description
 Maps ``input`` to ``iterator`` then passes the the result to ``callback``.
 
@@ -70,7 +70,7 @@ addOneThenDoubleEach([1, 2, 3]); // [4, 6, 8]
 ```
 
 ---
-### ``f.List.reduce(Fn, =Generic, =Fn)``
+### ``f.List.reduce(Fn, =Generic, =Fn) -> Fn -> Generic``
 #### Description
 Reduces ``input`` throughj ``iterator`` then passes the the result to ``callback``.
 
@@ -87,7 +87,7 @@ f.List.reduce Fn(
 
 
 ---
-### ``f.Object.filterProperties(String..., =Fn)``
+### ``f.Object.filterProperties(String..., =Fn) -> Fn -> Generic``
 #### Description
 Deletes ``properties`` from ``input`` then passes the result to ``callback``.
 
