@@ -76,14 +76,23 @@ f.Object.filterProperties Fn(
 
 #### Example
 ```js
-var removeSensitiveFields = f.Object.filterProperties('password', 'admin');
-
+var removeSensitiveFields = f.Object.filterProperties('password', 'isAdmin');
 Object.keys(removeSensitiveFields({
     id: 1,
     username: 'Elijah',
     password: '$2y$10$bpI4uLZfRG39MLVuWexVvuzWK2kXI1FEmFrgVVZn1FMwxeYMQoEE2',
-    admin: true,
+    isAdmin: true,
     createdAt: 1422409318922,
     updatedAt: 1422409318922,
 })); // ['id', 'username', 'createdAt', 'updatedAt']
+
+// Express + Knex.js example (http://expressjs.com/, http://knexjs.org/)
+app.route('/api/users').get(function(request, response) {
+    knex('Users').select().then(
+        f.List.map(
+            f.Object.filterProperties('password', 'isAdmin'),
+            response.json
+        )
+    );
+});
 ```
