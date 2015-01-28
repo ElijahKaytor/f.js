@@ -20,11 +20,11 @@ name ::= [a-z] (('.')? [a-zA-Z0-9_])*
 ### Diagrams
 
 #### ``signature``
-![](signature.png)
+![](docs/diagrams/signature.png)
 #### ``name``
-![](name.png)
+![](docs/diagrams/name.png)
 #### ``type``
-![](type.png)
+![](docs/diagrams/type.png)
 
 
 ## Functions
