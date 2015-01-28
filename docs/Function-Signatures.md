@@ -29,7 +29,13 @@ type ::= (
 ### ``function``
 ![](https://cdn.rawgit.com/ElijahKaytor/f.js/5fe7697/docs/diagrams/function.svg)
 ```ebnf
-function ::= 'Fn' ('(' ((name ':')? type (',' (name ':')? type)* (',')?)? ')')? ('->' type)? ('=' (type | ECMAScriptExpression))?
+function ::= (
+    'Fn' ('('
+        ( (name ':')? type (',' (name ':')? type)* (',')? )?
+    ')')?
+    ('->' type)?
+    ('=' (type | ECMAScriptExpression))?
+)
 ```
 ### ``custom-type``
 ![](https://cdn.rawgit.com/ElijahKaytor/f.js/5fe7697/docs/diagrams/custom-type.svg)

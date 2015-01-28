@@ -10,5 +10,11 @@ type ::= (
     | 'String'
     | custom-type
 )
-function ::= 'Fn' ('(' ((name ':')? type (',' (name ':')? type)* (',')?)? ')')? ('->' type)? ('=' (type | ECMAScriptExpression))?
+function ::= (
+    'Fn' ('('
+        ( (name ':')? type (',' (name ':')? type)* (',')? )?
+    ')')?
+    ('->' type)?
+    ('=' (type | ECMAScriptExpression))?
+)
 custom-type ::= (name '.')? [A-Z] [A-Za-z0-9]*
