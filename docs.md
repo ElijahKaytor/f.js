@@ -72,7 +72,7 @@ addOneThenDoubleEach([1, 2, 3]); // [4, 6, 8]
 ---
 ### ``f.List.reduce(Fn, =Generic, =Fn)``
 #### Description
-Reduces ``input`` throughj ``iterator`` then passes the the result to ``callback``.
+Reduces ``input`` through ``iterator`` then passes the the result to ``callback``.
 
 Returns the result from ``callback``.
 
