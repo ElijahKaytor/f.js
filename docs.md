@@ -9,7 +9,7 @@ Signatures follow the following format;
 ## Functions
 
 
-### ``f.done(=Fn)``
+### ``f.done``
 #### Description
 Returns a function that;
 
@@ -26,7 +26,7 @@ f.done Fn(
 
 
 ---
-### ``f.tee(=Fn)``
+### ``f.tee``
 #### Description
 Returns a function that;
 
@@ -43,7 +43,7 @@ f.tee Fn(
 
 
 ---
-### ``f.List.map(Fn, =Fn)``
+### ``f.List.map``
 #### Description
 Returns a function that;
 
@@ -74,7 +74,7 @@ addOneThenDoubleEach([1, 2, 3]); // [4, 6, 8]
 ```
 
 ---
-### ``f.List.reduce(Fn, =Generic, =Fn)``
+### ``f.List.reduce``
 #### Description
 Returns a function that;
 
@@ -92,7 +92,7 @@ f.List.reduce Fn(
 
 
 ---
-### ``f.Object.filterProperties(String..., =Fn)``
+### ``f.Object.filterProperties``
 #### Description
 Returns a function that;
 
