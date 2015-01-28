@@ -1,6 +1,6 @@
 ## Function Signatures
 
-### Function Signatures follow the following format ([``EBNF``](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form));
+### Function Signatures follow these [``EBNF``](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form)s;
 
 #### ``signature``
 ![](diagrams/signature.png)
