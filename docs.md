@@ -1,4 +1,4 @@
-# F – A *fun*ctional ECMAScript Library
+# f – A *fun*ctional ECMAScript Library
 
 ## Functions
 
@@ -86,7 +86,7 @@ Object.keys(removeSensitiveFields({
     updatedAt: 1422409318922,
 })); // ['id', 'username', 'createdAt', 'updatedAt']
 
-// Express + Knex.js example (http://expressjs.com/, http://knexjs.org/)
+// Express.js + Knex.js example (http://expressjs.com/, http://knexjs.org/)
 app.route('/api/users').get(function(request, response) {
     knex('Users').select().then(
         f.List.map(
