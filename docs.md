@@ -32,7 +32,7 @@ Returns a function that;
 #### Signature
 ```js
 f.done = Fn(
-    callback:   Fn(firstArgument: Generic) -> Generic = function(){},
+    callback: Fn(firstArgument: Generic) -> Generic = function(){},
 ) -> Fn(firstArgument: Generic) -> Generic;
 ```
 
@@ -124,7 +124,7 @@ Returns a function that;
 ```js
 f.Object.filterProperties = Fn(
     properties: String...,
-    callback:   Fn(output: Object) -> Generic = f.done(),
+    callback: Fn(output: Object) -> Generic = f.done(),
 ) -> Fn(input Object) -> Generic;
 ```
 
