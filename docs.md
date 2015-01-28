@@ -1,18 +1,21 @@
 # F – A *fun*ctional ECMAScript Library
 
+
 ## Signatures
-Signatures follow the following format
+Signatures follow the following format;
+##### TODO: Railroad Diagram
+
 
 ## Functions
 
 
 ### ``f.done(=Fn)``
 #### Description
-Calls ``callback`` with the first argument.
+Returns a function that;
 
-Returns the first argument.
-
-Ignores the result from ``callback``.
+- Calls ``callback`` with ``firstArgument``.
+- Returns ``firstArgument``.
+- Ignores the result from ``callback``.
 
 #### Signature
 ```js
@@ -25,11 +28,11 @@ f.done Fn(
 ---
 ### ``f.tee(=Fn)``
 #### Description
-Passes the arguments to ``callback`` as a ``List``.
+Returns a function that;
 
-Returns the arguments as a ``List``.
-
-Ignores the result from ``callback``.
+- Passes ``args`` to ``callback`` as a ``List``.
+- Returns ``args`` as a ``List``.
+- Ignores the result from ``callback``.
 
 #### Signature
 ```js
@@ -42,9 +45,10 @@ f.tee Fn(
 ---
 ### ``f.List.map(Fn, =Fn)``
 #### Description
-Maps ``input`` to ``iterator`` then passes the the result to ``callback``.
+Returns a function that;
 
-Returns the result from ``callback``.
+- Maps ``input`` to ``iterator`` then passes the the result to ``callback``.
+- Returns the result from ``callback``.
 
 #### Signature
 ```js
@@ -72,9 +76,10 @@ addOneThenDoubleEach([1, 2, 3]); // [4, 6, 8]
 ---
 ### ``f.List.reduce(Fn, =Generic, =Fn)``
 #### Description
-Reduces ``input`` through ``iterator`` then passes the the result to ``callback``.
+Returns a function that;
 
-Returns the result from ``callback``.
+- Reduces ``input`` through ``iterator`` then passes the the result to ``callback``.
+- Returns the result from ``callback``.
 
 #### Signature
 ```js
@@ -89,9 +94,10 @@ f.List.reduce Fn(
 ---
 ### ``f.Object.filterProperties(String..., =Fn)``
 #### Description
-Deletes ``properties`` from ``input`` then passes the result to ``callback``.
+Returns a function that;
 
-Returns the result from ``callback``.
+- Deletes ``properties`` from ``input`` then passes the result to ``callback``.
+- Returns the result from ``callback``.
 
 #### Signature
 ```js
