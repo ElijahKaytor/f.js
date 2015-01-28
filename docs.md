@@ -8,7 +8,7 @@ Signatures follow the following format;
 
 ## Functions
 
-### Index
+### Table of contents
 - Root functions
     - [``f.done(=Fn) -> Fn -> Generic``](#fdone)
     - [``f.tee(=Fn) -> Fn -> List``](#ftee)
