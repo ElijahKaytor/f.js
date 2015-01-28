@@ -3,7 +3,7 @@
 ## Functions
 
 
-### ``f.done(F)``
+### ``f.done(F=)``
 #### Description
 Returns the first argument
 
@@ -18,7 +18,7 @@ f.done Fn(
 
 
 ---
-### ``f.tee(F)``
+### ``f.tee(F=)``
 #### Description
 Returns the arguments as a ``List``
 
@@ -33,7 +33,7 @@ f.tee Fn(
 
 
 ---
-### ``f.List.map(F, F)``
+### ``f.List.map(F, F=)``
 #### Description
 Returns a function that maps ``input`` to ``iterator`` and passes the result to ``callback``
 
