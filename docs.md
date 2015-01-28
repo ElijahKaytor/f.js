@@ -1,4 +1,4 @@
-# f – A *fun*ctional ECMAScript Library
+# ``f`` – A *fun*ctional ECMAScript Library
 
 
 ## Signatures
