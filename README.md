@@ -12,6 +12,11 @@ signature ::= (name '=')? type ';'
 #### ``name``
 ![](docs/diagrams/name.png)
 ```ebnf
+name ::= [a-z] (('.')? [a-zA-Z0-9_])*
+```
+#### ``type``
+![](docs/diagrams/type.png)
+```ebnf
 type ::= (
     ('Fn' '(' (name ':')? type (',' (name ':')? type)* (',')? ')')
     | 'Generic'
@@ -20,11 +25,6 @@ type ::= (
     | 'Int'
     | 'Float'
 )
-```
-#### ``type``
-![](docs/diagrams/type.png)
-```ebnf
-name ::= [a-z] (('.')? [a-zA-Z0-9_])*
 ```
 
 
