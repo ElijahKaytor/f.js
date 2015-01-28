@@ -31,9 +31,9 @@ Returns a function that;
 
 #### Signature
 ```js
-f.done Fn(
-    callback:   Fn(firstArgument Generic) -> Generic = function(){}
-) -> Fn(firstArgument Generic) -> Generic
+f.done = Fn(
+    callback:   Fn(firstArgument: Generic) -> Generic = function(){}
+) -> Fn(firstArgument: Generic) -> Generic
 ```
 
 
@@ -48,9 +48,9 @@ Returns a function that;
 
 #### Signature
 ```js
-f.tee Fn(
-    callback:   Fn(args List) -> Generic = f.done()
-) -> Fn(args Generic...) -> List
+f.tee = Fn(
+    callback:   Fn(args: List) -> Generic = f.done()
+) -> Fn(args: Generic...) -> List
 ```
 
 
@@ -64,9 +64,13 @@ Returns a function that;
 
 #### Signature
 ```js
-f.List.map Fn(
-    iterator:   Fn(element Generic, index Int, array List) -> Generic
-    callback:   Fn(output List) -> Generic = f.done()
+f.List.map = Fn(
+    iterator: Fn(
+        element: Generic
+        index: Int
+        array: List
+    ) -> Generic
+    callback:   Fn(output: List) -> Generic = f.done()
 ) -> Fn(input List) -> Generic
 ```
 
@@ -95,10 +99,15 @@ Returns a function that;
 
 #### Signature
 ```js
-f.List.reduce Fn(
-    iterator:   Fn(previousValue Generic, currentValue Generic, index Int, array List) -> Generic
+f.List.reduce = Fn(
+    iterator: Fn(
+        previousValue: Generic
+        currentValue: Generic
+        index: Int
+        array: List
+    ) -> Generic
     firstValue: Generic = null
-    callback:   Fn(output List) -> Generic = f.done()
+    callback:   Fn(output: List) -> Generic = f.done()
 ) -> Fn(input List) -> Generic
 ```
 
@@ -113,9 +122,9 @@ Returns a function that;
 
 #### Signature
 ```js
-f.Object.filterProperties Fn(
+f.Object.filterProperties = Fn(
     properties: String...
-    callback:   Fn(output Object) -> Generic = f.done()
+    callback:   Fn(output: Object) -> Generic = f.done()
 ) -> Fn(input Object) -> Generic
 ```
 
