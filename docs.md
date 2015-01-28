@@ -21,7 +21,7 @@ Returns the first argument
 Calls ``callback`` with the first argument
 
 #### Signature
-```
+```js
 f.done(
     callback    F(firstArgument *)
 ) returns *;
@@ -36,7 +36,7 @@ Returns the arguments as a ``List``
 Passes the arguments to ``callback``'s first argument as a ``List``
 
 #### Signature
-```
+```js
 f.tee(
     callback    F(args A)
 ) returns A;
@@ -49,7 +49,7 @@ f.tee(
 Returns a function that maps ``input`` to ``iterator`` and passes the result to ``callback``
 
 #### Signature
-```
+```js
 f.List.map(
     iterator    F(element *, index I, array L)
     callback    F(result L)
