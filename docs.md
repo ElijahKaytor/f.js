@@ -58,9 +58,15 @@ f.List.map(
 
 #### Example
 ```js
-var addOneToEach = f.List.map(function(n) { return n + 1 });
-addOneToEach([1, 2, 3]); // [2, 3, 4]
+var addOne = function(n) { return n + 1 };
+var double = function(n) { return n * 2 };
 
-var doubleEach = f.List.map(function(n) { return n * 2 });
+var addOneEach = f.List.map(addOne);
+addOneEach([1, 2, 3]); // [2, 3, 4]
+
+var doubleEach = f.List.map(double);
 doubleEach([1, 2, 3]); // [1, 4, 6]
+
+var addOneThenDoubleEach = f.List.map(addOne, f.List.map(double));
+addOneThenDoubleEach([1, 2, 3]); // [4, 6, 8]
 ```
