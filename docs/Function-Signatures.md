@@ -13,17 +13,27 @@ signature ::= (name '=')? type ';'
 name ::= [a-z] (('.')? [a-zA-Z0-9_])*
 ```
 #### ``type``
-![](https://cdn.rawgit.com/ElijahKaytor/f.js/b2a7c806/docs/diagrams/type.svg)
+![](https://cdn.rawgit.com/ElijahKaytor/f.js/5fe7697/docs/diagrams/type.svg)
 ```ebnf
 type ::= (
-    'Fn' ('(' (name ':')? type (',' (name ':')? type)* (',')? ')')? ('->' type)? ('=' (type | ECMAScriptExpression))?
+    function
+    | custom-type
     | 'Generic'
     | 'List' ('(' type ')')?
     | 'Object'
     | 'Int'
     | 'Float'
     | 'String'
-    | [A-Z] [A-Za-z0-9]*
 )
+```
+### ``function``
+![](https://cdn.rawgit.com/ElijahKaytor/f.js/5fe7697/docs/diagrams/function.svg)
+```ebnf
+function ::= 'Fn' ('(' ((name ':')? type (',' (name ':')? type)* (',')?)? ')')? ('->' type)? ('=' (type | ECMAScriptExpression))?
+```
+### ``custom-type``
+![](https://cdn.rawgit.com/ElijahKaytor/f.js/5fe7697/docs/diagrams/custom-type.svg)
+```ebnf
+custom-type ::= (name '.')? [A-Z] [A-Za-z0-9]*
 ```
 
