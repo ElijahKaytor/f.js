@@ -2,9 +2,8 @@
 
 
 ## Function Signatures
-Function Signatures follow the following format;
+Function Signatures follow the following format [``(EBNF)``](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form);
 
-### [``EBNF``](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form)
 ```ebnf
 signature ::= (name '=')? type ';'
 type ::= (
