@@ -16,12 +16,14 @@ name ::= [a-z] (('.')? [a-zA-Z0-9_])*
 ![](diagrams/type.svg)
 ```ebnf
 type ::= (
-    ('Fn' '(' (name ':')? type (',' (name ':')? type)* (',')? ')')
+    'Fn' ('(' (name ':')? type (',' (name ':')? type)* (',')? ')')? ('->' type)? ('=' (type | ECMAScriptExpression))?
     | 'Generic'
     | 'List' ('(' type ')')?
     | 'Object'
     | 'Int'
     | 'Float'
+    | 'String'
+    | [A-Z] [A-Za-z0-9]*
 )
 ```
 
