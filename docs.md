@@ -1,4 +1,4 @@
-# f – A *fun*ctional ECMAScript Library
+# F – A *fun*ctional ECMAScript Library
 
 ## Functions
 
@@ -20,9 +20,9 @@ f.done Fn(
 ---
 ### ``f.tee(=Fn)``
 #### Description
-Returns the arguments as a ``List``
+Returns the arguments as a ``List``.
 
-Passes the arguments to ``callback`` as a ``List``
+Passes the arguments to ``callback`` as a ``List``.
 
 #### Signature
 ```js
@@ -35,7 +35,9 @@ f.tee Fn(
 ---
 ### ``f.List.map(Fn, =Fn)``
 #### Description
-Maps ``input`` to ``iterator`` then passes the the result to ``callback``
+Maps ``input`` to ``iterator`` then passes the the result to ``callback``.
+
+Returns the result from ``callback``.
 
 #### Signature
 ```js
@@ -64,7 +66,9 @@ addOneThenDoubleEach([1, 2, 3]); // [4, 6, 8]
 ---
 ### ``f.Object.filterProperties(String..., =Fn)``
 #### Description
-Deletes ``properties``s from ``input`` then passes the result to ``callback``
+Deletes ``properties``s from ``input`` then passes the result to ``callback``.
+
+Returns the result from ``callback``.
 
 #### Signature
 ```js
