@@ -39,6 +39,7 @@ Passes the arguments to ``callback``'s first argument as a ``List``
 ```js
 f.tee(
     callback    F(args A)
+        :default f.done()
 ) returns A;
 ```
 
@@ -53,6 +54,7 @@ Returns a function that maps ``input`` to ``iterator`` and passes the result to 
 f.List.map(
     iterator    F(element *, index I, array L)
     callback    F(result L)
+        :default f.done()
 ) returns F(input L);
 ```
 
