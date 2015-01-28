@@ -1,34 +1,41 @@
 # F – A *fun*ctional ECMAScript Library
 
+## Signatures
+Signatures follow the following format
+
 ## Functions
 
 
 ### ``f.done(=Fn)``
 #### Description
-Returns the first argument
+Calls ``callback`` with the first argument.
 
-Calls ``callback`` with the first argument
+Returns the first argument.
+
+Ignores the result from ``callback``.
 
 #### Signature
 ```js
 f.done Fn(
-    callback    Fn(firstArgument Generic) -> Generic
-) -> Generic
+    callback    Fn(firstArgument Generic) -> Generic = function(){}
+) -> Fn(firstArgument Generic) -> Generic
 ```
 
 
 ---
 ### ``f.tee(=Fn)``
 #### Description
+Passes the arguments to ``callback`` as a ``List``.
+
 Returns the arguments as a ``List``.
 
-Passes the arguments to ``callback`` as a ``List``.
+Ignores the result from ``callback``.
 
 #### Signature
 ```js
 f.tee Fn(
-    callback    F(args List) -> Generic = f.done
-) -> ArgumentList
+    callback    Fn(args List) -> Generic = f.done()
+) -> Fn(args Generic...) -> List
 ```
 
 
@@ -43,7 +50,7 @@ Returns the result from ``callback``.
 ```js
 f.List.map Fn(
     iterator    Fn(element Generic, index Int, array List) -> Generic
-    callback    Fn(output List) -> Generic = f.done
+    callback    Fn(output List) -> Generic = f.done()
 ) -> Fn(input List) -> Generic
 ```
 
@@ -62,11 +69,27 @@ var addOneThenDoubleEach = f.List.map(addOne, f.List.map(double));
 addOneThenDoubleEach([1, 2, 3]); // [4, 6, 8]
 ```
 
+---
+### ``f.List.reduce(Fn, =Generic, =Fn)``
+#### Description
+Reduces ``input`` throughj ``iterator`` then passes the the result to ``callback``.
+
+Returns the result from ``callback``.
+
+#### Signature
+```js
+f.List.reduce Fn(
+    iterator    Fn(previousValue Generic, currentValue Generic, index Int, array List) -> Generic
+    firstValue  Generic = null
+    callback    Fn(output List) -> Generic = f.done()
+) -> Fn(input List) -> Generic
+```
+
 
 ---
 ### ``f.Object.filterProperties(String..., =Fn)``
 #### Description
-Deletes ``properties``s from ``input`` then passes the result to ``callback``.
+Deletes ``properties`` from ``input`` then passes the result to ``callback``.
 
 Returns the result from ``callback``.
 
@@ -74,7 +97,7 @@ Returns the result from ``callback``.
 ```js
 f.Object.filterProperties Fn(
     properties  String...
-    callback    Fn(output Object) -> Generic = f.done
+    callback    Fn(output Object) -> Generic = f.done()
 ) -> Fn(input Object) -> Generic
 ```
 
