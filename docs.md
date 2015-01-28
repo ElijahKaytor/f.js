@@ -71,7 +71,7 @@ f.List.map = Fn(
         array: List,
     ) -> Generic,
     callback: Fn(output: List) -> Generic = f.done(),
-) -> Fn(input List) -> Generic;
+) -> Fn(input: List) -> Generic;
 ```
 
 #### Example
@@ -108,7 +108,7 @@ f.List.reduce = Fn(
     ) -> Generic,
     firstValue: Generic = null,
     callback: Fn(output: List) -> Generic = f.done(),
-) -> Fn(input List) -> Generic;
+) -> Fn(input: List) -> Generic;
 ```
 
 
@@ -125,7 +125,7 @@ Returns a function that;
 f.Object.filterProperties = Fn(
     properties: String...,
     callback: Fn(output: Object) -> Generic = f.done(),
-) -> Fn(input Object) -> Generic;
+) -> Fn(input: Object) -> Generic;
 ```
 
 #### Example
