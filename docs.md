@@ -3,7 +3,7 @@
 ## Functions
 
 
-### ``f.done(=F)``
+### ``f.done(=Fn)``
 #### Description
 Returns the first argument
 
@@ -18,31 +18,31 @@ f.done Fn(
 
 
 ---
-### ``f.tee(=F)``
+### ``f.tee(=Fn)``
 #### Description
 Returns the arguments as a ``List``
 
-Passes the arguments to ``callback``'s first argument as a ``List``
+Passes the arguments to ``callback`` as a ``List``
 
 #### Signature
 ```js
 f.tee Fn(
-    callback    F(args List) -> Generic = f.done()
+    callback    F(args List) -> Generic = f.done
 ) -> ArgumentList
 ```
 
 
 ---
-### ``f.List.map(F, =F)``
+### ``f.List.map(Fn, =Fn)``
 #### Description
-Returns a function that maps ``input`` to ``iterator`` and passes the result to ``callback``
+Maps ``input`` to ``iterator`` then passes the the result to ``callback``
 
 #### Signature
 ```js
 f.List.map Fn(
     iterator    Fn(element Generic, index Int, array List) -> Generic
-    callback    Fn(result List) -> Generic = f.done()
-) -> Fn(input List)
+    callback    Fn(output List) -> Generic = f.done
+) -> Fn(input List) -> Generic
 ```
 
 #### Example
@@ -58,4 +58,32 @@ doubleEach([1, 2, 3]); // [1, 4, 6]
 
 var addOneThenDoubleEach = f.List.map(addOne, f.List.map(double));
 addOneThenDoubleEach([1, 2, 3]); // [4, 6, 8]
+```
+
+
+---
+### ``f.Object.filter(String..., =Fn)``
+#### Description
+Deletes ``properties``s from ``input`` then passes the result to ``callback``
+
+#### Signature
+```js
+f.Object.filter Fn(
+    properties  String...
+    callback    Fn(output Object) -> Generic = f.done
+) -> Fn(input Object) -> Generic
+```
+
+#### Example
+```js
+var removeSensitiveFields = f.Object.filter('password', 'admin');
+
+Object.keys(removeSensitiveFields({
+    id: 1,
+    username: 'Elijah',
+    password: '$2y$10$bpI4uLZfRG39MLVuWexVvuzWK2kXI1FEmFrgVVZn1FMwxeYMQoEE2',
+    admin: true,
+    createdAt: 1422409318922,
+    updatedAt: 1422409318922,
+})); // ['id', 'username', 'createdAt', 'updatedAt']
 ```
