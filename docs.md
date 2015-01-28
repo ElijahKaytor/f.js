@@ -8,7 +8,18 @@ Signatures follow the following format;
 
 ## Functions
 
+- Root functions
+    - [``f.done(=Fn) -> Fn -> Generic``](#fdone)
+    - [``f.tee(=Fn) -> Fn -> List``](#ftee)
 
+- List functions
+    - [``f.List.map(Fn, =Fn) -> Fn -> Generic``](#flistmap)
+    - [``f.List.reduce(Fn, =Generic, =Fn) -> Fn -> Generic``](#flistreduce)
+
+- Object functions
+    - [``f.Object.filterProperties(String..., =Fn) -> Fn -> Generic``](#fobjectfilterproperties)
+
+---
 ### ``f.done``
 #### Description
 Returns a function that;
