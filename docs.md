@@ -1,16 +1,5 @@
 # F – A *fun*ctional ECMAScript Library
 
-
-## Types
-
-### L – List, Array, Iterable
-### A – Argument List
-### F – Function
-### O – Object
-### * – Type-agnostic
-
-
----
 ## Functions
 
 
@@ -22,9 +11,9 @@ Calls ``callback`` with the first argument
 
 #### Signature
 ```js
-f.done(
-    callback    F(firstArgument *)
-) returns *;
+f.done Fn(
+    callback    Fn(firstArgument Generic) -> Generic
+) -> Generic
 ```
 
 
@@ -37,10 +26,9 @@ Passes the arguments to ``callback``'s first argument as a ``List``
 
 #### Signature
 ```js
-f.tee(
-    callback    F(args A)
-        :default f.done()
-) returns A;
+f.tee Fn(
+    callback    F(args List) -> Generic = f.done()
+) -> ArgumentList
 ```
 
 
@@ -51,11 +39,10 @@ Returns a function that maps ``input`` to ``iterator`` and passes the result to 
 
 #### Signature
 ```js
-f.List.map(
-    iterator    F(element *, index I, array L)
-    callback    F(result L)
-        :default f.done()
-) returns F(input L);
+f.List.map Fn(
+    iterator    Fn(element Generic, index Int, array List) -> Generic
+    callback    Fn(result List) -> Generic = f.done()
+) -> Fn(input List)
 ```
 
 #### Example
