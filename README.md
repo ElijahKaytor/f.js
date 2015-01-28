@@ -4,8 +4,14 @@
 ## Function Signatures
 Function Signatures follow the following format [``(EBNF)``](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form);
 
+#### ``signature``
+![](docs/diagrams/signature.png)
 ```ebnf
 signature ::= (name '=')? type ';'
+```
+#### ``name``
+![](docs/diagrams/name.png)
+```ebnf
 type ::= (
     ('Fn' '(' (name ':')? type (',' (name ':')? type)* (',')? ')')
     | 'Generic'
@@ -14,17 +20,12 @@ type ::= (
     | 'Int'
     | 'Float'
 )
-name ::= [a-z] (('.')? [a-zA-Z0-9_])*
 ```
-
-### Diagrams
-
-#### ``signature``
-![](docs/diagrams/signature.png)
-#### ``name``
-![](docs/diagrams/name.png)
 #### ``type``
 ![](docs/diagrams/type.png)
+```ebnf
+name ::= [a-z] (('.')? [a-zA-Z0-9_])*
+```
 
 
 ## Functions
