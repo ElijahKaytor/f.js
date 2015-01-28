@@ -1,7 +1,6 @@
 # F – A *fun*ctional ECMAScript Library
 
 
----
 ## Types
 
 ### L – List, Array, Iterable
