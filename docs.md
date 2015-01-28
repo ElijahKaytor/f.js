@@ -57,7 +57,7 @@ f.List.map(
 ```
 
 #### Example
-```
+```js
 var addOneToEach = f.List.map(function(n) { return n + 1 });
 addOneToEach([1, 2, 3]); // [2, 3, 4]
 
