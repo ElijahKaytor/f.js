@@ -13,7 +13,7 @@ signature ::= (name '=')? type ';'
 name ::= [a-z] (('.')? [a-zA-Z0-9_])*
 ```
 #### ``type``
-![](https://cdn.rawgit.com/ElijahKaytor/f.js/d8ba2d8/docs/diagrams/type.svg)
+![](https://cdn.rawgit.com/ElijahKaytor/f.js/08469d2/docs/diagrams/type.svg)
 ```ebnf
 type ::= ('...')? (
     function
@@ -23,6 +23,7 @@ type ::= ('...')? (
     | 'Int'
     | 'Float'
     | 'String'
+    | 'Boolean'
     | custom-type
 ) ('=' (type | ECMAScriptExpression))?
 ```
