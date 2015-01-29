@@ -17,14 +17,14 @@ name ::= [a-z] (('.')? [a-zA-Z0-9_])*
 ```ebnf
 type ::= (
     function
-    | custom-type
     | 'Generic'
     | 'List' ('(' type ')')?
     | 'Object'
     | 'Int'
     | 'Float'
     | 'String'
-) ('=' (type | ECMAScriptExpression))?
+    | custom-type
+) ('...')? ('=' (type | ECMAScriptExpression))?
 ```
 ### ``function``
 ![](https://cdn.rawgit.com/ElijahKaytor/f.js/0d11caa/docs/diagrams/function.svg)
