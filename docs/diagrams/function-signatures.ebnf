@@ -9,12 +9,11 @@ type ::= (
     | 'Float'
     | 'String'
     | custom-type
-)
+) ('...')? ('=' (type | ECMAScriptExpression))?
 function ::= (
     'Fn' ('('
         ( (name ':')? type (',' (name ':')? type)* (',')? )?
     ')')?
     ('->' type)?
-    ('=' (type | ECMAScriptExpression))?
 )
 custom-type ::= (name '.')? [A-Z] [A-Za-z0-9]*

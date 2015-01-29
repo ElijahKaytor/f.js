@@ -24,7 +24,7 @@ type ::= (
     | 'Int'
     | 'Float'
     | 'String'
-)
+) ('=' (type | ECMAScriptExpression))?
 ```
 ### ``function``
 ![](https://cdn.rawgit.com/ElijahKaytor/f.js/5fe7697/docs/diagrams/function.svg)
@@ -34,7 +34,6 @@ function ::= (
         ( (name ':')? type (',' (name ':')? type)* (',')? )?
     ')')?
     ('->' type)?
-    ('=' (type | ECMAScriptExpression))?
 )
 ```
 ### ``custom-type``
@@ -42,4 +41,3 @@ function ::= (
 ```ebnf
 custom-type ::= (name '.')? [A-Z] [A-Za-z0-9]*
 ```
-
