@@ -2,6 +2,8 @@
 
 ### Function Signatures follow these [``EBNF``](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form)s;
 
+Generated with Gunther Rademacher's Railroad Diagram Generator (http://bottlecaps.de/rr/ui)
+
 #### ``signature``
 ![](https://cdn.rawgit.com/ElijahKaytor/f.js/b2a7c806/docs/diagrams/signature.svg)
 ```ebnf
