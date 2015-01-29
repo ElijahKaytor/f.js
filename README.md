@@ -9,30 +9,24 @@ See [docs/Function-Signatures.md](docs/Function-Signatures.md)
 
 ### Table of contents
 - Root functions
-    - [``f.done(=Fn) -> Fn -> Generic``](#fdone)
-    - [``f.tee(=Fn) -> Fn -> List``](#ftee)
+    - [``f.done(=Generic) -> Generic``](#fdone)
+    - [``f.tee(=Fn...) -> Fn -> List``](#ftee)
 
 - ``List`` functions
-    - [``f.List.map(Fn, =Fn) -> Fn -> Generic``](#flistmap)
-    - [``f.List.reduce(Fn, =Generic, =Fn) -> Fn -> Generic``](#flistreduce)
+    - [``f.List.map(Fn, =Fn) -> Fn(List) -> Generic``](#flistmap)
+    - [``f.List.reduce(Fn, =Generic, =Fn) -> Fn(List) -> Generic``](#flistreduce)
 
 - ``Object`` functions
-    - [``f.Object.filterProperties(String..., =Fn) -> Fn -> Generic``](#fobjectfilterproperties)
+    - [``f.Object.filterProperties(String..., =Fn) -> Fn(Object) -> Generic``](#fobjectfilterproperties)
 
 ---
 ### ``f.done``
 #### Description
-Returns a function that;
-
-- Calls ``callback`` with ``firstArgument``.
-- Returns ``firstArgument``.
-- Ignores the result from ``callback``.
+Returns ``firstArgument``.
 
 #### Signature
 ```js
-f.done = Fn(
-    callback: Fn(firstArgument: Generic) -> Generic = function(){},
-) -> Fn(firstArgument: Generic) -> Generic;
+f.done = Fn(firstArgument: Generic) -> Generic;
 ```
 
 
@@ -41,14 +35,14 @@ f.done = Fn(
 #### Description
 Returns a function that;
 
-- Passes ``args`` to ``callback`` as a ``List``.
+- Applies ``args`` to ``callbacks``.
 - Returns ``args`` as a ``List``.
-- Ignores the result from ``callback``.
+- Ignores the results from ``callbacks``.
 
 #### Signature
 ```js
 f.tee = Fn(
-    callback: Fn(args: List) -> Generic = f.done(),
+    callbacks: Fn(args: Generic...) -> Generic... - = [function(){}],
 ) -> Fn(args: Generic...) -> List;
 ```
 
@@ -69,7 +63,7 @@ f.List.map = Fn(
         index: Int,
         array: List,
     ) -> Generic,
-    callback: Fn(output: List) -> Generic = f.done(),
+    callback: Fn(output: List) -> Generic = f.done,
 ) -> Fn(input: List) -> Generic;
 ```
 
@@ -106,7 +100,7 @@ f.List.reduce = Fn(
         array: List,
     ) -> Generic,
     firstValue: Generic = null,
-    callback: Fn(output: List) -> Generic = f.done(),
+    callback: Fn(output: List) -> Generic = f.done,
 ) -> Fn(input: List) -> Generic;
 ```
 
@@ -123,7 +117,7 @@ Returns a function that;
 ```js
 f.Object.filterProperties = Fn(
     properties: String...,
-    callback: Fn(output: Object) -> Generic = f.done(),
+    callback: Fn(output: Object) -> Generic = f.done,
 ) -> Fn(input: Object) -> Generic;
 ```
 
