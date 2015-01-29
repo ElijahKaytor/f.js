@@ -13,9 +13,9 @@ signature ::= (name '=')? type ';'
 name ::= [a-z] (('.')? [a-zA-Z0-9_])*
 ```
 #### ``type``
-![](https://cdn.rawgit.com/ElijahKaytor/f.js/0d11caa/docs/diagrams/type.svg)
+![](https://cdn.rawgit.com/ElijahKaytor/f.js/d8ba2d8/docs/diagrams/type.svg)
 ```ebnf
-type ::= (
+type ::= ('...')? (
     function
     | 'Generic'
     | 'List' ('(' type ')')?
@@ -24,7 +24,7 @@ type ::= (
     | 'Float'
     | 'String'
     | custom-type
-) ('...')? ('=' (type | ECMAScriptExpression))?
+) ('=' (type | ECMAScriptExpression))?
 ```
 ### ``function``
 ![](https://cdn.rawgit.com/ElijahKaytor/f.js/0d11caa/docs/diagrams/function.svg)

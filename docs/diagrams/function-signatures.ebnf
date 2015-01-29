@@ -1,6 +1,6 @@
 signature ::= (name '=')? type ';'
 name ::= [a-z] (('.')? [a-zA-Z0-9_])*
-type ::= (
+type ::= ('...')? (
     function
     | 'Generic'
     | 'List' ('(' type ')')?
@@ -9,7 +9,7 @@ type ::= (
     | 'Float'
     | 'String'
     | custom-type
-) ('...')? ('=' (type | ECMAScriptExpression))?
+) ('=' (type | ECMAScriptExpression))?
 function ::= (
     'Fn' ('('
         ( (name ':')? type (',' (name ':')? type)* (',')? )?
