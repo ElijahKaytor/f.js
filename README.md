@@ -10,14 +10,14 @@ See [docs/Function-Signatures.md](docs/Function-Signatures.md)
 ### Table of contents
 - Root functions
     - [``f.done(=Generic) -> Generic``](#fdone)
-    - [``f.tee(=Fn...) -> Fn -> List``](#ftee)
+    - [``f.tee(...=Fn) -> Fn -> List``](#ftee)
 
 - ``List`` functions
     - [``f.List.map(Fn, =Fn) -> Fn(List) -> Generic``](#flistmap)
     - [``f.List.reduce(Fn, =Generic, =Fn) -> Fn(List) -> Generic``](#flistreduce)
 
 - ``Object`` functions
-    - [``f.Object.filterProperties(String..., =Fn) -> Fn(Object) -> Generic``](#fobjectfilterproperties)
+    - [``f.Object.filterProperties(...String, =Fn) -> Fn(Object) -> Generic``](#fobjectfilterproperties)
 
 ---
 ### ``f.done``
@@ -42,8 +42,8 @@ Returns a function that;
 #### Signature
 ```js
 f.tee = Fn(
-    callbacks: Fn(args: Generic...) -> Generic... - = [function(){}],
-) -> Fn(args: Generic...) -> List;
+    callbacks: ...Fn(args: ...Generic) -> Generic - = [function(){}],
+) -> Fn(args: ...Generic) -> List;
 ```
 
 
@@ -116,7 +116,7 @@ Returns a function that;
 #### Signature
 ```js
 f.Object.filterProperties = Fn(
-    properties: String...,
+    properties: ...String,
     callback: Fn(output: Object) -> Generic = f.done,
 ) -> Fn(input: Object) -> Generic;
 ```
