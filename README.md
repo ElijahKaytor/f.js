@@ -42,7 +42,7 @@ Returns a function that;
 #### Signature
 ```js
 f.tee = Fn(
-    callbacks: ...Fn(args: ...Generic) -> Generic - = [function(){}],
+    callbacks: ...Fn(args: ...Generic) -> Generic = [function(){}],
 ) -> Fn(args: ...Generic) -> List;
 ```
 
